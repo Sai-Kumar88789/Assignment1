@@ -28,19 +28,19 @@
                 
                 $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-                // var_dump($row);
+                var_dump($row);
 
-                // $stmt = $pdo->prepare("INSERT INTO users (name, email, password) VALUES ('alan', :mk, :yr)");
+                $stmt = $pdo->prepare("INSERT INTO users (name, email, password) VALUES ('alan', :mk, :yr)");
 
-                // $stmt->execute(array(
-                //     ':mk' => $_POST['who'],
-                //     ':yr' => $_POST['pass']
-                // ));
+                $stmt->execute(array(
+                    ':mk' => $_POST['who'],
+                    ':yr' => $_POST['pass']
+                ));
                 
 
-                // if($_POST['pass'] != "php123") {
+                if($_POST['pass'] != "php123") {
 
-                // // }
+                 }
                 
                 if ( $row === FALSE ) {
                     $hash = hash('sha256', $_POST['pass']);
@@ -68,4 +68,5 @@
         </p>
     </form>
 </body>
-</html>
+    </html>
+
